@@ -1,16 +1,23 @@
 
-# Java Reactive Application using Spring Webflux - DynamoDB - AWS CLI - Reactor among other stacks
-###### O projeto é requisito para conclusão do Bootcamp TQI na Digital Innovation One
+# Java Microservice Application using ElasticSearch Spring Cloud - 
+### O projeto não é requisito para conclusão mas é parte fundamental do Bootcamp TQI na Digital Innovation One
 
 ## Stack 
 
   * Java8
-  * Spring webflux
-  * Spring data
-  * Dynamodb
+  * Spring Cloud
+  * Spring ElasticSearch Data
+  * ElasticSearch
   * Junit
+  * Mockito
   * sl4j
-  * Reactor
+  * Docker
+  * Redis
+  
+### Code Quality
+    
+* SonarLint
+
 
 
 ### API Documentation
@@ -22,48 +29,26 @@ http://localhost:8080/webjars/swagger-ui/index.html?configUrl=/v3/api-docs/swagg
 ![img_1.png](img_1.png)
 
 
-#### HEROES REACTIVE WEBFLUX API
-##### Reactive API using WebFlux, DynamoDB, AWS CLI, REACTOR, Spring Framework
-
-#### GET -> Get Hero By ID
-    curl --location --request GET 'localhost:8080/heroes/4'
-
-#### POST -> Create new HERO on DynamoDB
-    curl --location --request POST 'localhost:8080/heroes/' \
-    --header 'Content-Type: application/json' \
-    --data-raw '{
-    "id":"2",
-    "name":"Genoveva",
-    "universe":"Encantado",
-    "countFilmes":10
-    }'
-
-#### GET ALL Heroes
-    curl --location --request GET 'localhost:8080/heroes'
-
-#### DELETE RESOURCE BY ID
-    curl --location --request DELETE 'localhost:8080/heroes/2'
-
-#### PUT  -> UPDATE HERO BY ID
-    curl --location --request PUT 'localhost:8080/heroes/4' \   
-    --header 'Content-Type: application/json' \
-    --data-raw '{
-    "id": "4",
-    "name":"Amélia",
-    "universe":"All",
-    "countFilms":4  
-    }'
-
-
-
-
-### Reading - Reactive Manifesto
-+ https://www.reactivemanifesto.org/
-
 ### Commands
-#### DynamoDB
-    docker pull amazon/dynamodb-local
-    docker run -p 8000:8000 amazon/dynamodb-local
+#### Installing and running ElasticSearch docker image locally 
+    usuario@computador ~/IdeaProjects/TQI/MicrosservicosSpringCloudTQI $ echo """docker run -d --name elasticsearch -p 9200:9200 -p 9300:9300 -e "discovery.type=single-node" elasticsearch:latest""" >> run-elasticsearch.sh
+    usuario@computador ~/IdeaProjects/TQI/MicrosservicosSpringCloudTQI $ chmod +x run-elasticsearch.sh
+    usuario@computador ~/IdeaProjects/TQI/MicrosservicosSpringCloudTQI $ sh run-elasticsearch.sh
+    Unable to find image 'elasticsearch:6.6.2' locally
+    6.6.2: Pulling from library/elasticsearch
+    a02a4930cb5d: Pull complete
+    1c0c2b94f1aa: Downloading [=================================================> ]  185.9MB/188MB
+    e7ba1c987917: Download complete
+    8a5898116619: Download complete
+    fa49d069f225: Download complete
+    0dee6ce7977c: Download complete
+    77ecd20c6308: Download complete
+
+#### Installing and running Redis docker image locally
+    * https://hub.docker.com/_/redis
+    usuario@computador ~/IdeaProjects/TQI/MicrosservicosSpringCloudTQI $ echo "docker run -d --name redis -p 6379:6379 -p 9300:9300 -e "discovery.type=single-node" redis:latest" >> run-redis.sh
+
+
 
 #### Docker Compose
     On project root dir run:
