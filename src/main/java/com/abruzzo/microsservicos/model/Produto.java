@@ -6,7 +6,7 @@ import org.springframework.data.elasticsearch.annotations.Document;
 
 @Getter
 @Setter
-@Document(indexName = "produto", type="catalog")
+@Document(indexName = "produto")
 public class Produto {
 
     private Long id;
