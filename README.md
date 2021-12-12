@@ -15,10 +15,14 @@
   * Redis
   
 ### Code Quality
-    
 * SonarLint
 
-
+### Tests
+* Postman
+  * https://web.postman.co/workspace/My-Workspace~728c0cf1-f562-47b6-8f38-800bcfb65bad
+*
+* Tutorial de testes:
+  * +https://www.callicoder.com/spring-5-reactive-webclient-webtestclient-examples/
 
 ### API Documentation
 
