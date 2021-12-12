@@ -1,4 +1,4 @@
-package com.abruzzo.MicrosservicosSpringCloudTQI;
+package com.abruzzo.microsservicos;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
